@@ -397,14 +397,15 @@ reset();
 
 }
 
+// Winner
 function playerWin(player) {
-    var message = "Congratulations! " + player + " wins!";
+    var message = "Congratulations!" + player + " wins!";
     $('#message').text(message);
     $('#message-modal').modal('show');
     gameRunning = false;
   }
   
-
+// Reset function
 function reset() {
   ballX = canvas.width / 2;
   ballY = canvas.height / 2;
@@ -412,6 +413,7 @@ function reset() {
   ballSpeedY = Math.random() * 10 - 5;
 }
 
+// Draw function
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -438,6 +440,7 @@ function draw() {
   ctx.fillText("Score: " + rightPlayerScore, canvas.width - 70, 20);
 }
 
+// Loop function
 function loop() {
   update();
   draw();
